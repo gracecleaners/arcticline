@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { resend } from '@/lib/resend'
+import { getResend } from '@/lib/resend'
 
 // Simple HTML sanitization to strip tags from user input
 function sanitize(str: string): string {
@@ -42,6 +42,7 @@ export async function POST(request: Request) {
       message: sanitize(message),
     }
 
+    const resend = getResend()
     const { data, error } = await resend.emails.send({
       from: 'Arcticline Contact <noreply@arcticline.xyz>',
       to: ['info@arcticline.xyz'],
