@@ -3,17 +3,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import {
   ArrowRight,
   ExternalLink,
-  CreditCard,
-  Home,
-  Wifi,
-  ShoppingBag,
-  Navigation,
   ChevronRight,
-  LinkIcon,
-  Monitor,
 } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import StaggerChildren, { staggerItemVariants } from '@/components/StaggerChildren'
@@ -30,8 +24,7 @@ const projects = [
     client: 'Daraza',
     description: 'A comprehensive mobile money payment aggregator providing API access for developers and businesses to process payments, handle remittances, and build custom financial integrations across Uganda.',
     tags: ['REST API', 'Mobile Money', 'MTN MoMo', 'Fintech'],
-    color: 'from-emerald-400 to-teal-600',
-    icon: CreditCard,
+    image: '/images/daraza-payment.svg',
     url: 'https://daraza.net',
     metrics: { uptime: '99.99%', partners: '50+', transactions: '100K+' },
   },
@@ -42,8 +35,7 @@ const projects = [
     client: 'Daraza',
     description: 'A no-code payment link generation service enabling freelancers and small businesses to create and share customizable payment links for instant mobile money collections.',
     tags: ['No-Code', 'Payment Links', 'Mobile Money', 'Real-time'],
-    color: 'from-blue-400 to-indigo-600',
-    icon: LinkIcon,
+    image: '/images/paylink.svg',
     url: 'https://paylink.daraza.net',
     metrics: { users: '5K+', links: '20K+', uptime: '99.9%' },
   },
@@ -54,8 +46,7 @@ const projects = [
     client: 'Daraza',
     description: 'An open-source property management and search platform connecting landlords with tenants in Uganda. Features searchable listings, high-res imagery, and location-based filtering.',
     tags: ['Real Estate', 'Search', 'Listings', 'Marketplace'],
-    color: 'from-rose-400 to-pink-600',
-    icon: Home,
+    image: '/images/my-next-home.svg',
     url: 'https://mynexthome.daraza.net',
     metrics: { listings: '1K+', landlords: '200+', cities: '10+' },
   },
@@ -66,8 +57,7 @@ const projects = [
     client: 'Daraza',
     description: 'A hotspot monetization platform enabling hotels, cafés, and ISPs to automate WiFi access through mobile money payments. Includes captive portal management and revenue analytics.',
     tags: ['Hotspot', 'Captive Portal', 'Revenue', 'Automation'],
-    color: 'from-purple-400 to-violet-600',
-    icon: Wifi,
+    image: '/images/wifi-manager.svg',
     url: 'https://wifi.daraza.net',
     metrics: { hotspots: '100+', revenue: 'UGX 50M+', uptime: '99.9%' },
   },
@@ -78,8 +68,7 @@ const projects = [
     client: 'Shukran Foods',
     description: 'A full-featured e-commerce platform for a food and grocery business, with mobile money checkout integration and a seamless shopping experience.',
     tags: ['E-Commerce', 'Shop', 'Mobile Money', 'Checkout'],
-    color: 'from-amber-400 to-orange-600',
-    icon: ShoppingBag,
+    image: '/images/shukran-foods.svg',
     url: 'https://www.shukranifoods.shop',
     metrics: { products: '200+', orders: '1K+', satisfaction: '4.8★' },
   },
@@ -90,8 +79,7 @@ const projects = [
     client: 'Daraza',
     description: 'A complete offline-first Business Operating System. Run sales, inventory, customers & reports on a single phone — zero internet required. Scales from mobile to desktop enterprise with cloud backup, multi-branch support, and POS hardware integration.',
     tags: ['Offline-First', 'POS', 'Inventory', 'Cross-Platform', '5 Platforms'],
-    color: 'from-cyan-400 to-blue-600',
-    icon: Monitor,
+    image: '/images/ism.svg',
     url: 'https://ism.daraza.net',
     metrics: { platforms: '5', offline: '100%', pricing: 'Free Tier' },
   },
@@ -102,8 +90,7 @@ const projects = [
     client: 'Daraza',
     description: 'A ride-hailing application currently in development. Designed to connect passengers with drivers, providing safe, reliable, and affordable transportation across Uganda. Coming 2026.',
     tags: ['Ride-Hailing', 'Transportation', 'Mobile App', 'Coming 2026'],
-    color: 'from-emerald-400 to-green-600',
-    icon: Navigation,
+    image: '/images/zyra.svg',
     url: '#',
     metrics: { status: 'Coming Soon', type: 'Ride-Hailing', launch: '2026' },
   },
@@ -153,18 +140,22 @@ export default function PortfolioContent() {
                 <motion.div key={project.id} layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.4 }} onMouseEnter={() => setHoveredId(project.id)} onMouseLeave={() => setHoveredId(null)}>
                   <GlowCard glowColor={`rgba(15, 119, 170, ${hoveredId === project.id ? 0.2 : 0.05})`} className="h-full">
                     <div className="glass rounded-2xl group hover:bg-white/[0.02] transition-all duration-500 h-full flex flex-col">
-                      <div className={`relative h-48 bg-gradient-to-br ${project.color} overflow-hidden`}>
-                        <div className="absolute inset-0 bg-black/20" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <project.icon className="w-16 h-16 text-white/30 group-hover:scale-110 group-hover:text-white/50 transition-all duration-500" />
-                        </div>
+                      <div className="relative h-48 overflow-hidden">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <a href={project.url} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:bg-white/20 transition-colors">
                             <ExternalLink className="w-4 h-4" />
                           </a>
                         </div>
                         <div className="absolute bottom-4 left-4">
-                          <span className="px-3 py-1 rounded-lg text-xs font-medium bg-black/30 text-white backdrop-blur-sm">{project.category}</span>
+                          <span className="px-3 py-1 rounded-lg text-xs font-medium bg-black/50 text-white backdrop-blur-sm">{project.category}</span>
                         </div>
                       </div>
                       <div className="p-8 flex-1 flex flex-col min-h-[280px]">

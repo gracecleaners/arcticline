@@ -1,0 +1,15 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="url(#gradient)"/>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+  <circle cx="300" cy="160" r="80" fill="white" fill-opacity="0.15"/>
+  <circle cx="300" cy="160" r="60" fill="white" fill-opacity="0.2"/>
+  <rect x="240" y="145" width="50" height="35" rx="4" fill="white" fill-opacity="0.3"/>
+  <rect x="270" y="150" width="8" height="8" rx="4" fill="white" fill-opacity="0.6"/>
+  <text x="300" y="290" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="28" font-weight="700">Daraza</text>
+  <text x="300" y="325" text-anchor="middle" fill="white" fill-opacity="0.7" font-family="system-ui, sans-serif" font-size="16">Payment Gateway</text>
+</svg>
