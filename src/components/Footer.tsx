@@ -46,15 +46,15 @@ export default function Footer() {
             <p className="text-gray-400 mb-6 max-w-md">
               Get the latest insights on technology, innovation, and digital transformation delivered straight to your inbox.
             </p>
-            <div className="flex gap-3">
-              <form onSubmit={(e) => { e.preventDefault(); alert('Thank you for subscribing!'); }} className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <form onSubmit={(e) => { e.preventDefault(); alert('Thank you for subscribing!'); }} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <input
                   type="email"
                   required
                   placeholder="Enter your email"
-                  className="flex-1 px-5 py-3 rounded-xl glass border border-white/10 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-arctic-500/50 focus:ring-2 focus:ring-arctic-500/20 transition-all"
+                  className="w-full sm:w-auto flex-1 px-5 py-3 rounded-xl glass border border-white/10 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-arctic-500/50 focus:ring-2 focus:ring-arctic-500/20 transition-all"
                 />
-                <button type="submit" className="btn-arctic px-6 py-3 text-white font-semibold whitespace-nowrap">
+                <button type="submit" className="btn-arctic w-full sm:w-auto px-6 py-3 text-white font-semibold whitespace-nowrap">
                   Subscribe
                 </button>
               </form>

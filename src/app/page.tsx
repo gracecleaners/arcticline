@@ -113,9 +113,9 @@ export default function HomePage() {
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center pt-20">
         {/* Background effects */}
         <div className="absolute inset-0 bg-mesh" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-arctic-500/10 rounded-full blur-[120px] animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-arctic-600/10 rounded-full blur-[100px] animate-float-delayed" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-arctic-500/5 rounded-full blur-[150px]" />
+        <div className="hidden md:block absolute top-1/4 left-1/4 w-96 h-96 bg-arctic-500/10 rounded-full blur-[120px] animate-float" />
+        <div className="hidden md:block absolute bottom-1/4 right-1/4 w-80 h-80 bg-arctic-600/10 rounded-full blur-[100px] animate-float-delayed" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-arctic-500/5 rounded-full blur-[150px]" />
 
         <motion.div
           style={{ y: heroY, opacity: heroOpacity, scale: heroScale }}
@@ -421,7 +421,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-mesh" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-arctic-500/10 rounded-full blur-[150px]" />
+        <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] lg:w-[800px] h-[200px] lg:h-[400px] bg-arctic-500/10 rounded-full blur-[150px]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6">

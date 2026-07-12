@@ -83,8 +83,8 @@ export default function ContactContent() {
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center justify-center pt-20">
         <div className="absolute inset-0 bg-mesh" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-arctic-500/10 rounded-full blur-[120px] animate-float" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-[100px] animate-float-delayed" />
+        <div className="hidden md:block absolute top-1/3 left-1/4 w-96 h-96 bg-arctic-500/10 rounded-full blur-[120px] animate-float" />
+        <div className="hidden md:block absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-[100px] animate-float-delayed" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <AnimatedSection>
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium text-arctic-400 bg-arctic-500/10 border border-arctic-500/20 mb-6">Get in Touch</span>
