@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Github, Twitter, Linkedin, Instagram, ArrowUpRight, Heart } from 'lucide-react'
+import { Github, Linkedin, ArrowUpRight, Heart } from 'lucide-react'
 
 const footerLinks = {
   Company: [
@@ -26,10 +26,8 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Github, href: 'https://github.com/arcticline-platform', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/arcticline/', label: 'LinkedIn' },
 ]
 
 export default function Footer() {

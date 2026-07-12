@@ -21,8 +21,8 @@ import MagneticButton from '@/components/MagneticButton'
 
 const contactMethods = [
   { icon: MapPin, title: 'Visit Us', details: ['Gulu, Uganda', 'East Africa'], color: 'from-arctic-400 to-blue-600' },
-  { icon: Phone, title: 'Call Us', details: ['+256 700 000 000', 'Mon-Fri, 9am-6pm EAT'], color: 'from-emerald-400 to-teal-600' },
-  { icon: Mail, title: 'Email Us', details: ['hello@Arcticline.com', 'We reply within 24 hours'], color: 'from-purple-400 to-pink-600' },
+  { icon: Phone, title: 'Call Us', details: ['+256 789 079 301', 'Mon-Fri, 9am-6pm EAT'], color: 'from-emerald-400 to-teal-600' },
+  { icon: Mail, title: 'Email Us', details: ['info@arcticline.xyz', 'We reply within 24 hours'], color: 'from-purple-400 to-pink-600' },
   { icon: Clock, title: 'Business Hours', details: ['Monday - Friday: 9am - 6pm', 'East Africa Time (EAT)'], color: 'from-amber-400 to-orange-600' },
 ]
 
@@ -35,13 +35,43 @@ const faqs = [
 
 export default function ContactContent() {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', service: '', budget: '', message: '' })
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitMessage, setSubmitMessage] = useState('')
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => { setIsSubmitted(false); setFormData({ name: '', email: '', company: '', service: '', budget: '', message: '' }) }, 3000)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setSubmitMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
+      setSubmitStatus('success')
+      setSubmitMessage(data.message || "Message sent successfully! We'll get back to you within 24 hours.")
+      setFormData({ name: '', email: '', company: '', service: '', budget: '', message: '' })
+    } catch (error) {
+      setSubmitStatus('error')
+      setSubmitMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+      setTimeout(() => {
+        setSubmitStatus('idle')
+        setSubmitMessage('')
+      }, 6000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -116,7 +146,7 @@ export default function ContactContent() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-gray-400 mb-2">Company</label>
-                      <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your Company" className="w-full px-5 py-3.5 rounded-xl glass border border-white/10 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-arctic-500/50 focus:ring-2 focus:ring-arctic-500/20 transition-all" />
+                      <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your Company Ltd." className="w-full px-5 py-3.5 rounded-xl glass border border-white/10 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-arctic-500/50 focus:ring-2 focus:ring-arctic-500/20 transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-400 mb-2">Service Interest *</label>
@@ -145,9 +175,38 @@ export default function ContactContent() {
                     <label className="block text-sm font-medium text-gray-400 mb-2">Project Details *</label>
                     <textarea name="message" value={formData.message} onChange={handleChange} required rows={5} placeholder="Tell us about your project, goals, and how we can help..." className="w-full px-5 py-3.5 rounded-xl glass border border-white/10 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-arctic-500/50 focus:ring-2 focus:ring-arctic-500/20 transition-all resize-none" />
                   </div>
+                  {submitStatus === 'success' && (
+                    <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">
+                      <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+                      <p className="text-sm">{submitMessage}</p>
+                    </div>
+                  )}
+                  {submitStatus === 'error' && (
+                    <div className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-300">
+                      <span className="w-5 h-5 flex-shrink-0 flex items-center justify-center rounded-full bg-red-500/20 text-xs font-bold">!</span>
+                      <p className="text-sm">{submitMessage}</p>
+                    </div>
+                  )}
                   <MagneticButton className="w-full">
-                    <button type="submit" className="btn-arctic w-full py-4 text-white font-semibold text-lg flex items-center justify-center gap-3 group">
-                      {isSubmitted ? (<><CheckCircle2 className="w-5 h-5" />Message Sent!</>) : (<>Send Message<Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></>)}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="btn-arctic w-full py-4 text-white font-semibold text-lg flex items-center justify-center gap-3 group disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                          </svg>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
                     </button>
                   </MagneticButton>
                 </form>

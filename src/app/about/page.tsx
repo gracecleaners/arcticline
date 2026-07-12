@@ -3,11 +3,11 @@ import AboutContent from './AboutContent'
 
 export const metadata: Metadata = {
   title: 'About Us — Arcticline',
-  description: 'Learn about Arcticline\'s mission, values, team, and journey to becoming a global technology leader in digital transformation and innovation.',
-  keywords: ['about Arcticline', 'tech company', 'digital transformation', 'innovation', 'team', 'mission', 'values'],
+  description: "Learn about Arcticline's mission, values, team, and journey — from our founding in Gulu, Uganda to building offline-first technology solutions that power businesses across East Africa.",
+  keywords: ['about Arcticline', 'African tech startup', 'offline-first', 'Gulu Uganda', 'fintech', 'mission', 'values'],
   openGraph: {
-    title: 'About Arcticline — Engineering the Future',
-    description: 'Learn about our mission, values, team, and journey to becoming a global technology leader.',
+    title: 'About Arcticline — Offline-First Technology from East Africa',
+    description: "Learn about our mission, values, team, and journey to build world-class technology that works for African businesses.",
     type: 'website',
     siteName: 'Arcticline',
   },

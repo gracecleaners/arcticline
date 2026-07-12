@@ -3,11 +3,11 @@ import ServicesContent from './ServicesContent'
 
 export const metadata: Metadata = {
   title: 'Services — Arcticline',
-  description: 'Explore Arcticline\'s comprehensive technology services including cloud infrastructure, AI & machine learning, custom software development, cybersecurity, and data engineering.',
-  keywords: ['cloud services', 'AI solutions', 'software development', 'cybersecurity', 'data engineering', 'tech services'],
+  description: "Explore Arcticline's technology services including offline-first POS systems (ISM), mobile money payment gateways (Daraza), custom software development, cloud infrastructure, and data engineering for African businesses.",
+  keywords: ['offline-first POS', 'mobile money', 'payment gateway', 'software development', 'fintech', 'ISM', 'Daraza', 'cloud infrastructure'],
   openGraph: {
-    title: 'Arcticline Services — Cloud, AI, Development & Security',
-    description: 'Comprehensive technology solutions that transform businesses and create competitive advantages.',
+    title: 'Arcticline Services — Offline-First Tech, Payments & Development',
+    description: "Comprehensive technology solutions purpose-built for African realities — from offline-first business systems to mobile money payment gateways.",
     type: 'website',
     siteName: 'Arcticline',
   },

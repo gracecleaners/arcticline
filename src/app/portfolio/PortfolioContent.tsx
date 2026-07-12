@@ -10,7 +10,7 @@ import {
   Home,
   Wifi,
   ShoppingBag,
-  Layers,
+  Navigation,
   ChevronRight,
   LinkIcon,
   Monitor,
@@ -100,12 +100,12 @@ const projects = [
     category: 'Coming Soon',
     title: 'Zyra',
     client: 'Daraza',
-    description: 'An internal platform currently in development within the Daraza ecosystem. Designed to streamline core operations and enhance the overall service offering.',
-    tags: ['Internal Platform', 'In Development', 'Operations'],
-    color: 'from-slate-400 to-gray-600',
-    icon: Layers,
+    description: 'A ride-hailing application currently in development. Designed to connect passengers with drivers, providing safe, reliable, and affordable transportation across Uganda. Coming 2026.',
+    tags: ['Ride-Hailing', 'Transportation', 'Mobile App', 'Coming 2026'],
+    color: 'from-emerald-400 to-green-600',
+    icon: Navigation,
     url: '#',
-    metrics: { status: 'Coming Soon', phase: 'Beta', launch: '2025' },
+    metrics: { status: 'Coming Soon', type: 'Ride-Hailing', launch: '2026' },
   },
 ]
 
@@ -151,7 +151,7 @@ export default function PortfolioContent() {
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project) => (
                 <motion.div key={project.id} layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.4 }} onMouseEnter={() => setHoveredId(project.id)} onMouseLeave={() => setHoveredId(null)}>
-                  <GlowCard glowColor={`rgba(15, 119, 170, ${hoveredId === project.id ? 0.2 : 0.05})`}>
+                  <GlowCard glowColor={`rgba(15, 119, 170, ${hoveredId === project.id ? 0.2 : 0.05})`} className="h-full">
                     <div className="glass rounded-2xl group hover:bg-white/[0.02] transition-all duration-500 h-full flex flex-col">
                       <div className={`relative h-48 bg-gradient-to-br ${project.color} overflow-hidden`}>
                         <div className="absolute inset-0 bg-black/20" />

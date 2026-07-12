@@ -8,7 +8,7 @@ import {
   Shield,
   Cpu,
   Cloud,
-  Sparkles,
+  MessageSquare,
   ChevronRight,
   Star,
   Quote,
@@ -16,7 +16,7 @@ import {
   CheckCircle2,
   Code2,
   Rocket,
-  Wifi,
+  Monitor,
   Smartphone,
 } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
@@ -26,47 +26,47 @@ import MagneticButton from '@/components/MagneticButton'
 
 const features = [
   {
-    icon: Wifi,
-    title: 'Offline-First Technology',
-    description: 'We build solutions that work without internet — because we understand the realities of doing business in Africa. Your data stays on your device until you\'re ready to sync.',
+    icon: Code2,
+    title: 'Custom Software Development',
+    description: 'We build corporate computer software tailored to your business needs — from web applications and mobile apps to embedded systems and enterprise platforms.',
     color: 'from-arctic-400 to-blue-600',
   },
   {
     icon: Smartphone,
-    title: 'Mobile-First Design',
-    description: 'Every product we build starts on mobile. From POS systems to payment gateways, we design for the device Africans use most — their phones.',
+    title: 'Mobile & Web Apps',
+    description: 'Full-stack mobile and web application development for businesses, organisations, and individuals. From ride-hailing apps to e-commerce platforms.',
     color: 'from-emerald-400 to-teal-600',
   },
   {
     icon: Shield,
-    title: 'Enterprise Security',
-    description: 'Bank-grade security protocols protecting your data with end-to-end encryption, role-based access, and full audit trails.',
+    title: 'Enterprise Systems',
+    description: 'Secure, scalable enterprise software solutions with role-based access, audit trails, and integrations that power business operations at any scale.',
     color: 'from-purple-400 to-pink-600',
   },
   {
     icon: Cpu,
-    title: 'AI-Powered Insights',
-    description: 'Harness the power of machine learning to automate workflows, predict trends, and gain intelligent insights for your business.',
+    title: 'Embedded Systems',
+    description: 'Custom embedded systems development for hardware integration, IoT devices, and specialized industrial applications.',
     color: 'from-amber-400 to-orange-500',
   },
   {
     icon: Cloud,
-    title: 'Cloud Integration',
-    description: 'When you\'re ready, sync your data to the cloud. Our optional cloud backup keeps your business safe without requiring constant internet.',
+    title: 'Payment & Fintech',
+    description: 'Mobile money payment gateways, digital payment platforms, and financial technology solutions including our Daraza Payment Gateway serving Uganda.',
     color: 'from-cyan-400 to-blue-500',
   },
   {
-    icon: Code2,
-    title: 'Custom Development',
-    description: 'From payment gateways to property platforms, we build bespoke solutions tailored to the unique needs of African businesses.',
+    icon: Monitor,
+    title: 'Business Operating Systems',
+    description: 'Complete business management platforms like ISM — our offline-first POS and inventory system serving thousands of merchants across East Africa.',
     color: 'from-rose-400 to-red-500',
   },
 ]
 
 const stats = [
+  { value: '2023', label: 'Founded' },
+  { value: '2-10', label: 'Team Size' },
   { value: '7+', label: 'Products Built' },
-  { value: '5', label: 'Platforms Supported' },
-  { value: '100%', label: 'Offline-First' },
   { value: 'Uganda', label: 'Headquarters' },
 ]
 
@@ -94,7 +94,7 @@ const testimonials = [
   },
 ]
 
-const partners = ['Daraza', 'ISM', 'PayLink', 'WiFi Manager', 'My Next Home', 'Shukran Foods']
+const products = ['Daraza Payment Gateway', 'ISM Business OS', 'PayLink', 'WiFi Manager', 'My Next Home', 'Shukran Foods', 'Zyra Ride-Hailing']
 
 export default function HomePage() {
   const heroRef = useRef(null)
@@ -132,7 +132,7 @@ export default function HomePage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-arctic-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-arctic-500" />
             </span>
-            <span className="text-sm text-arctic-300 font-medium">Built in Gulu, Uganda 🇺🇬</span>
+            <span className="text-sm text-arctic-300 font-medium">🇺🇬 IT System Custom Software Development — Gulu, Uganda</span>
           </motion.div>
 
           {/* Headline */}
@@ -142,10 +142,9 @@ export default function HomePage() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-tight mb-6"
           >
-            Technology That{' '}
-            <span className="text-gradient">Works</span>
+            You Dream It,
             <br />
-            Without Internet
+            <span className="text-gradient">We Build It</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -155,8 +154,8 @@ export default function HomePage() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Arcticline builds offline-first digital solutions for African businesses.
-            From payment gateways to POS systems, we make technology that works — with or without internet.
+            Arcticline Technologies builds corporate computer software for businesses, organisations and individuals across East Africa.
+            With a team of experienced programmers and developers, if you can dream the idea, we can build it for you.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -195,15 +194,19 @@ export default function HomePage() {
           >
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-arctic-400" />
-              <span>Free to download</span>
+              <span>Founded 2023</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-arctic-400" />
-              <span>No internet required</span>
+              <span>2-10 Employees</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-arctic-400" />
-              <span>Works on any device</span>
+              <span>Custom Software</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-arctic-400" />
+              <span>7+ Products Built</span>
             </div>
           </motion.div>
         </motion.div>
@@ -229,24 +232,27 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Partners Section */}
+      {/* Products Section */}
       <section className="py-20 border-t border-white/5">
         <AnimatedSection>
           <div className="max-w-7xl mx-auto px-6">
-            <p className="text-center text-sm text-gray-500 mb-10 uppercase tracking-widest">
-              Our Products & Projects
+            <p className="text-center text-sm text-gray-500 mb-4 uppercase tracking-widest">
+              Products Built by Arcticline Technologies
+            </p>
+            <p className="text-center text-gray-400 text-sm max-w-xl mx-auto mb-10">
+              From payment gateways to ride-hailing — we turn ideas into real-world software
             </p>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-              {partners.map((partner, i) => (
+              {products.map((product, i) => (
                 <motion.div
-                  key={partner}
+                  key={product}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="text-gray-600 font-display text-xl md:text-2xl font-bold hover:text-arctic-400 transition-colors duration-300 cursor-default"
                 >
-                  {partner}
+                  {product}
                 </motion.div>
               ))}
             </div>
@@ -263,7 +269,7 @@ export default function HomePage() {
               What We Build
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
-              Designed for <span className="text-gradient">African Business</span>
+              What <span className="text-gradient">We Build</span>
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               We understand the unique challenges of doing business in Africa — and we build technology that solves them.
@@ -315,13 +321,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="text-center mb-20">
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium text-arctic-400 bg-arctic-500/10 border border-arctic-500/20 mb-6">
-              How It Works
+              Our Process
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
-              Start Free. <span className="text-gradient">Scale Infinitely.</span>
+              From Idea to{' '}
+              <span className="text-gradient">Reality</span>
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Download ISM, start selling offline, and scale to enterprise when your business grows.
+              You bring the vision. We bring the technical expertise. Together, we build software that works.
             </p>
           </AnimatedSection>
 
@@ -332,20 +339,20 @@ export default function HomePage() {
             {[
               {
                 step: '01',
-                title: 'Download & Start',
-                description: 'Install ISM on any phone or desktop. Set up your store, add products, and start selling — completely offline.',
-                icon: Sparkles,
+                title: 'Share Your Vision',
+                description: 'Tell us your idea. Whether it\'s a payment platform, a business system, or a mobile app — we listen, ask the right questions, and understand your needs.',
+                icon: MessageSquare,
               },
               {
                 step: '02',
-                title: 'Register on ISM Cloud',
-                description: 'Visit ism.daraza.net to create an account, verify your app, and unlock cloud storage for backups.',
+                title: 'We Design & Build',
+                description: 'Our team of experienced programmers and developers designs and builds your software. From architecture to deployment, we handle it all.',
                 icon: Code2,
               },
               {
                 step: '03',
-                title: 'Grow Your Business',
-                description: 'Import your mobile data into ISM Desktop. Unlock multi-user support, advanced accounting, and branch management.',
+                title: 'Launch & Grow',
+                description: 'We deploy your solution, provide ongoing support, and help you scale. From a single user to thousands — your software grows with you.',
                 icon: Rocket,
               },
             ].map((item, i) => (
@@ -418,31 +425,29 @@ export default function HomePage() {
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6">
-              Your Business Deserves{' '}
-              <span className="text-gradient">Better Tools</span>
+              Have an Idea?{' '}
+              <span className="text-gradient">Let's Build It</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-              Download ISM free today. Start selling offline in minutes.
-              Register when you&apos;re ready to unlock the cloud.
+              Whether it's a custom software solution, a payment platform, or a business operating system —
+              Arcticline Technologies turns your vision into reality. If you can dream it, we can build it.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <MagneticButton>
-                <a
-                  href="https://ism.daraza.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact"
                   className="btn-arctic px-10 py-5 text-white font-semibold text-lg flex items-center gap-3 group"
                 >
-                  Download Free
+                  Start Your Project
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </MagneticButton>
               <MagneticButton>
                 <Link
-                  href="/contact"
+                  href="/portfolio"
                   className="btn-outline px-10 py-5 text-lg flex items-center gap-3 group"
                 >
-                  Contact Sales
+                  View Our Products
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </MagneticButton>
