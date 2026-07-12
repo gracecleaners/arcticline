@@ -84,7 +84,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-6 group">
               <img src="/logo.png" alt="Arcticline Logo" width={40} height={40} className="rounded-xl" />
               <span className="text-xl font-display font-bold text-white">
-                Arctic<span className="text-arctic-400">Line</span>
+                Arctic<span className="text-arctic-400">line</span>
               </span>
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed">

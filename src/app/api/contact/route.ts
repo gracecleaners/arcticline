@@ -44,7 +44,7 @@ export async function POST(request: Request) {
 
     const resend = getResend()
     const { data, error } = await resend.emails.send({
-      from: 'Arcticline Contact <noreply@arcticline.xyz>',
+      from: 'Arcticline Contact <info@arcticline.xyz>',
       to: ['info@arcticline.xyz'],
       replyTo: email,
       subject: `New Contact Form Submission from ${s.name}${s.company ? ` — ${s.company}` : ''}`,

@@ -62,7 +62,7 @@ export default function Navbar() {
               <div className="absolute inset-0 rounded-xl bg-arctic-500/20 blur-xl group-hover:bg-arctic-500/40 transition-all duration-500" />
             </div>
             <span className="text-xl font-display font-bold text-white tracking-tight">
-              Arctic<span className="text-arctic-400">Line</span>
+              Arctic<span className="text-arctic-400">line</span>
             </span>
           </Link>
 
