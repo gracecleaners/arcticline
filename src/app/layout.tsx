@@ -20,12 +20,12 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Arcticline — Building Offline-First Technology for Africa',
-  description: 'Arcticline is an East African technology company building offline-first digital solutions — from payment gateways and POS systems to property platforms and WiFi monetization — designed for African realities.',
+  title: 'Arcticline — Custom Software & Fintech for East Africa',
+  description: 'Arcticline builds custom software and fintech solutions for East African businesses — payment gateways, POS systems, property platforms, and enterprise tools designed for African realities.'
   keywords: ['technology', 'offline-first', 'mobile money', 'fintech', 'POS system', 'African tech', 'Arcticline', 'Gulu', 'Uganda'],
   authors: [{ name: 'Arcticline' }],
   openGraph: {
-    title: 'Arcticline — Offline-First Technology Built in East Africa',
+    title: 'Arcticline — Custom Software & Fintech for East Africa',
     description: 'Building offline-first digital solutions for African businesses — payment gateways, POS systems, property platforms, and more.',
     type: 'website',
     siteName: 'Arcticline',
