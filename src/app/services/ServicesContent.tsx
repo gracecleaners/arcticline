@@ -45,9 +45,9 @@ const services = [
     id: 2,
     category: 'Products',
     icon: CreditCard,
-    title: 'Daraza Payment Gateway',
-    description: 'Mobile money payment aggregation for developers and businesses. Process payments, handle remittances, and build custom financial integrations.',
-    features: ['MTN MoMo', 'REST API', 'Sandbox', 'Uganda'],
+    title: 'Daraza Payment Agent',
+    description: 'A non-custodial mobile money payment agent connecting developers and businesses to mobile money networks. Facilitate collections, disburse funds, and build custom financial integrations — without holding customer funds.',
+    features: ['Non-Custodial', 'MTN MoMo', 'REST API', 'Sandbox'],
     color: 'from-blue-400 to-indigo-600',
   },
   {
@@ -120,7 +120,7 @@ export default function ServicesContent() {
               Solutions That <span className="text-gradient">Drive Growth</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              From offline-first business systems to payment gateways, we build technology that solves real African problems.
+              From offline-first business systems to non-custodial payment agents, we build technology that solves real African problems.
             </p>
           </AnimatedSection>
         </div>

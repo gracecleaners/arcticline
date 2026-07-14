@@ -52,7 +52,7 @@ const features = [
   {
     icon: Cloud,
     title: 'Payment & Fintech',
-    description: 'Mobile money payment gateways, digital payment platforms, and financial technology solutions including our Daraza Payment Gateway serving Uganda.',
+    description: 'Non-custodial mobile money payment agents, digital payment platforms, and financial technology solutions including Daraza connecting businesses to mobile money networks across Uganda.',
     color: 'from-cyan-400 to-blue-500',
   },
   {
@@ -94,7 +94,7 @@ const testimonials = [
   },
 ]
 
-const products = ['Daraza Payment Gateway', 'ISM Business OS', 'PayLink', 'WiFi Manager', 'My Next Home', 'Shukran Foods', 'Zyra Ride-Hailing']
+const products = ['Daraza Payment Agent', 'ISM Business OS', 'PayLink', 'WiFi Manager', 'My Next Home', 'Shukran Foods', 'Zyra Ride-Hailing']
 
 export default function HomePage() {
   const heroRef = useRef(null)

@@ -153,7 +153,7 @@ export default function ContactContent() {
                       <select name="service" value={formData.service} onChange={handleChange} required className="w-full px-5 py-3.5 rounded-xl glass border border-white/10 bg-white/5 text-gray-400 focus:outline-none focus:border-arctic-500/50 focus:ring-2 focus:ring-arctic-500/20 transition-all">
                         <option value="">Select a service</option>
                         <option value="ism">ISM — International Sales Machine</option>
-                        <option value="daraza">Daraza Payment Gateway</option>
+                        <option value="daraza">Daraza Payment Agent</option>
                         <option value="wifi">WiFi Manager</option>
                         <option value="custom">Custom Development</option>
                         <option value="consulting">Technical Consulting</option>

@@ -51,7 +51,7 @@ const values = [
 
 const timeline = [
   { year: '2023', title: 'The Spark', description: 'Arcticline was founded in Gulu, Uganda with a mission to build technology that solves real African problems.' },
-  { year: '2023', title: 'Daraza Partnership', description: 'Partnered with Daraza to build and scale their payment gateway and digital infrastructure across Uganda.' },
+  { year: '2023', title: 'Daraza Partnership', description: 'Partnered with Daraza to build and scale their non-custodial payment agent and digital infrastructure across Uganda.' },
   { year: '2024', title: 'ISM Launch', description: 'Launched ISM (International Sales Machine) — an offline-first Business OS serving thousands of merchants across Uganda.' },
   { year: '2024', title: 'Platform Expansion', description: 'Expanded the Daraza ecosystem with PayLink, WiFi Manager, My Next Home, and Shukran Foods.' },
   { year: '2025', title: 'Growing Impact', description: 'Continuing to build solutions that transform how businesses operate across East Africa and beyond.' },
@@ -81,7 +81,7 @@ export default function AboutContent() {
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Born in Gulu, Uganda, Arcticline is a tech startup building world-class digital solutions
-              for businesses across Africa. From payment gateways to offline-first business systems,
+              for businesses across Africa. From non-custodial payment agents to offline-first business systems,
               we make technology work for everyone.
             </p>
           </AnimatedSection>

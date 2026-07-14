@@ -13,7 +13,7 @@ const footerLinks = {
   ],
   Products: [
     { label: 'ISM — Sales Machine', href: '/services' },
-    { label: 'Daraza Gateway', href: 'https://daraza.net' },
+    { label: 'Daraza Payment Agent', href: 'https://daraza.net' },
     { label: 'WiFi Manager', href: 'https://wifi.daraza.net' },
     { label: 'PayLink', href: 'https://paylink.daraza.net' },
   ],
