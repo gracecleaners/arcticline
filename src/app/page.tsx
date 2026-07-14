@@ -52,7 +52,7 @@ const features = [
   {
     icon: Cloud,
     title: 'Payment & Fintech',
-    description: 'Non-custodial mobile money payment agents, digital payment platforms, and financial technology solutions including Daraza connecting businesses to mobile money networks across Uganda.',
+    description: 'Mobile money payment agents, digital payment platforms, and financial technology solutions including Daraza connecting businesses to mobile money networks across Uganda.',
     color: 'from-cyan-400 to-blue-500',
   },
   {

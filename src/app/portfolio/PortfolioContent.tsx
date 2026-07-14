@@ -23,7 +23,7 @@ const projects = [
     title: 'Daraza Payment Agent',
     client: 'Daraza',
     description: 'A mobile money payment agent connecting developers and businesses to mobile money networks. Access MTN MoMo and Airtel Money APIs to facilitate collections and disbursements without holding customer funds.',
-    tags: ['Non-Custodial', 'REST API', 'Mobile Money', 'MTN MoMo', 'Fintech'],
+    tags: ['REST API', 'Mobile Money','Airtel Money', 'MTN MoMo', 'Fintech'],
     image: '/images/daraza-payment.svg',
     url: 'https://daraza.net',
     metrics: { uptime: '99.99%', partners: '50+', transactions: '100K+' },
@@ -34,7 +34,7 @@ const projects = [
     title: 'PayLink Payment Agent',
     client: 'Daraza',
     description: 'No-code payment link generation service enabling freelancers and small businesses to create and share customizable payment links for instant mobile money collections — without holding customer funds.',
-    tags: ['Non-Custodial', 'No-Code', 'Payment Links', 'Mobile Money', 'Real-time'],
+    tags: ['No-Code', 'Payment Links', 'Mobile Money', 'Real-time'],
     image: '/images/paylink.svg',
     url: 'https://paylink.daraza.net',
     metrics: { users: '5K+', links: '20K+', uptime: '99.9%' },
@@ -115,7 +115,7 @@ export default function PortfolioContent() {
               Projects That <span className="text-gradient">Inspire</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              From non-custodial payment agents to property platforms, we build solutions that transform businesses across Africa.
+              From payment agents to property platforms, we build solutions that transform businesses across Africa.
             </p>
           </AnimatedSection>
         </div>
