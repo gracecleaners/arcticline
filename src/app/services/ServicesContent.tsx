@@ -46,7 +46,7 @@ const services = [
     category: 'Products',
     icon: CreditCard,
     title: 'Daraza Payment Agent',
-    description: 'A non-custodial mobile money payment agent connecting developers and businesses to mobile money networks. Facilitate collections, disburse funds, and build custom financial integrations — without holding customer funds.',
+    description: 'A mobile money payment agent connecting developers and businesses to mobile money networks. Facilitate collections, disburse funds, and build custom financial integrations — without holding customer funds.',
     features: ['Non-Custodial', 'MTN MoMo', 'REST API', 'Sandbox'],
     color: 'from-blue-400 to-indigo-600',
   },
